@@ -41,7 +41,8 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            padding-bottom: 40px;
+            /* 하단 여백 조정 */
+            padding-bottom: 0px; 
         }
 
         /* --- Banner Section --- */
@@ -104,7 +105,6 @@
             font-weight: 500;
         }
 
-        /* 선착순 마감 임박 뱃지 */
         .urgency-wrap {
             margin-top: 16px;
         }
@@ -132,11 +132,9 @@
 
         /* --- Button Section --- */
         .button-wrap {
-            padding: 0 20px;
-            margin-top: 15px;
+            padding: 0 20px 30px 20px;
         }
 
-        /* [추가됨] 고급스러운 골드 펄스 애니메이션 */
         @keyframes pulseGold {
             0% { box-shadow: 0 0 0 0 rgba(255, 208, 144, 0.4); }
             70% { box-shadow: 0 0 0 15px rgba(255, 208, 144, 0); }
@@ -155,7 +153,6 @@
             padding: 22px 0;
             border-radius: 18px;
             border: 1px solid rgba(255, 208, 144, 0.3);
-            /* 골드 펄스 애니메이션 적용 */
             animation: pulseGold 2s infinite;
             transition: all 0.3s ease;
         }
@@ -163,7 +160,7 @@
         .call-btn:active {
             transform: translateY(3px) scale(0.97);
             background: #0f0f1b;
-            animation: none; /* 누를 때는 애니메이션 잠시 정지 */
+            animation: none;
             border-color: rgba(255, 208, 144, 0.1);
         }
 
@@ -174,7 +171,6 @@
             fill: #FFD090; 
         }
 
-        /* [추가됨] 내선 번호 강력 안내 디자인 */
         .extension-info {
             margin-top: 16px;
             font-size: 15px;
@@ -184,7 +180,7 @@
         }
 
         .extension-info .highlight {
-            color: #d81b60; /* 시선을 끄는 진한 핑크/레드 포인트 */
+            color: #d81b60;
             background-color: rgba(216, 27, 96, 0.1);
             padding: 2px 6px;
             border-radius: 4px;
@@ -194,10 +190,39 @@
 
         .info-desc {
             font-size: 13px;
-            color: rgba(61, 45, 83, 0.7);
+            color: rgba(61, 45, 83, 0.9);
             margin-top: 8px;
             text-align: center;
+            font-weight: 600;
+        }
+
+        /* --- [신규 추가] 투명성 확보를 위한 Footer Section --- */
+        .footer-wrap {
+            background-color: rgba(22, 33, 62, 0.85);
+            padding: 20px 20px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .disclaimer-box {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-left: 3px solid #fbab7e;
+            padding: 10px 12px;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.85);
             font-weight: 500;
+            word-break: keep-all;
+        }
+
+        .footer-info p {
+            margin: 0 0 5px 0;
+        }
+
+        .footer-info span {
+            display: inline-block;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -228,10 +253,27 @@
             </a>
             
             <div class="extension-info">
-                📞 전화 연결 후 <span class="highlight">내선 5번</span>을 눌러주세요
+                📞 통화 연결 후 <span class="highlight">내선 5번</span>을 눌러주세요
             </div>
             
-            <p class="info-desc">터치 한 번으로 빠르게 예약 상담을 받아보세요.</p>
+            <!-- [변경] 전화번호의 정체를 투명하게 밝힘 -->
+            <p class="info-desc">본 연락처는 아세코밸리 공식 예약처로 연결됩니다.</p>
+        </div>
+
+        <!-- [신규 추가] 구글 봇과 검수자를 위한 비즈니스 투명성 정보 (절대 삭제 금지) -->
+        <div class="footer-wrap">
+            <div class="disclaimer-box">
+                본 랜딩페이지는 아세코밸리 선셋 콘서트의 공식 행사 대행사인 <strong>[B업체명]</strong>에서 제작 및 운영하고 있습니다.
+            </div>
+            <div class="footer-info">
+                <p><strong>[B업체명]</strong></p>
+                <p>
+                    <span>대표자 : [대표자명]</span>
+                    <span>사업자등록번호 : [000-00-00000]</span>
+                </p>
+                <p>주소 : [B업체 도로명 주소 전체 기재]</p>
+                <p>고객센터 : [B업체 전화번호] | 이메일 : [이메일주소@도메인.com]</p>
+            </div>
         </div>
     </div>
 
